@@ -1,0 +1,2684 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="South Ruwi Business Districts LLC — A diversified Omani company operating across trade, services, and commercial development in the Sultanate of Oman." />
+  <meta name="keywords" content="South Ruwi Business Districts, Oman, trade, commerce, business, Muscat, Ruwi" />
+  <meta name="author" content="South Ruwi Business Districts LLC" />
+  <title>South Ruwi Business Districts LLC | ضواحي جنوب روي للأعمال</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS RESET & CUSTOM PROPERTIES
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --royal-blue:   #0B4596;
+      --dark-blue:    #072F6B;
+      --gold:         #E5A71B;
+      --gold-dark:    #C8910E;
+      --white:        #FFFFFF;
+      --light-grey:   #F4F7FB;
+      --text:         #1F2937;
+      --text-muted:   #6B7280;
+      --border:       #E2E8F0;
+      --shadow-sm:    0 1px 3px rgba(7,47,107,0.08);
+      --shadow-md:    0 4px 16px rgba(7,47,107,0.12);
+      --shadow-lg:    0 8px 32px rgba(7,47,107,0.16);
+      --radius-sm:    6px;
+      --radius-md:    12px;
+      --radius-lg:    20px;
+      --transition:   0.3s cubic-bezier(0.4,0,0.2,1);
+      --font-en:      'Inter', system-ui, sans-serif;
+      --font-ar:      'Noto Sans Arabic', 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-en);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============================================================
+       UTILITY CLASSES
+    ============================================================ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-padding {
+      padding: 100px 0;
+    }
+
+    .section-padding-sm {
+      padding: 72px 0;
+    }
+
+    .arabic {
+      font-family: var(--font-ar);
+      direction: rtl;
+      unicode-bidi: embed;
+    }
+
+    .text-center { text-align: center; }
+    .text-gold   { color: var(--gold); }
+    .text-blue   { color: var(--royal-blue); }
+
+    /* Section label */
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    /* Section heading */
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--dark-blue);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.8;
+    }
+
+    /* Divider accent */
+    .title-accent {
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 16px 0 28px;
+    }
+
+    .title-accent.centered {
+      margin: 16px auto 28px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.01em;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--dark-blue);
+    }
+    .btn-gold:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(229,167,27,0.4);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-blue {
+      background: transparent;
+      color: var(--royal-blue);
+      border: 2px solid var(--royal-blue);
+    }
+    .btn-outline-blue:hover {
+      background: var(--royal-blue);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       NAVBAR
+    ============================================================ */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+      padding: 22px 0;
+    }
+
+    #navbar.scrolled {
+      background: var(--dark-blue);
+      box-shadow: 0 2px 20px rgba(7,47,107,0.25);
+      padding: 14px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-en {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo-ar {
+      font-family: var(--font-ar);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.4;
+      direction: rtl;
+    }
+
+    .nav-logo-accent {
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      margin-top: 4px;
+      border-radius: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 8px 14px;
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--dark-blue) !important;
+      font-weight: 700 !important;
+      padding: 8px 20px !important;
+      border-radius: var(--radius-sm) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-dark) !important;
+      color: var(--dark-blue) !important;
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+      outline: none;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .nav-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile nav */
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--dark-blue);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition);
+    }
+
+    .nav-mobile.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .nav-mobile a {
+      display: block;
+      padding: 14px 40px;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .nav-mobile a:hover {
+      color: var(--white);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .nav-mobile .close-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--white);
+      font-size: 1.5rem;
+      line-height: 1;
+      padding: 8px;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--dark-blue) 0%, var(--royal-blue) 60%, #1a5bb8 100%);
+      overflow: hidden;
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+
+    /* Geometric background elements */
+    .hero-geo {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-geo::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(229,167,27,0.08) 0%, transparent 70%);
+    }
+
+    .hero-geo::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -8%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-shape-1 {
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(229,167,27,0.15);
+      border-radius: 50%;
+      animation: rotateSlow 30s linear infinite;
+    }
+
+    .hero-shape-2 {
+      position: absolute;
+      top: 15%;
+      right: 8%;
+      width: 180px;
+      height: 180px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 50%;
+      animation: rotateSlow 20s linear infinite reverse;
+    }
+
+    .hero-shape-3 {
+      position: absolute;
+      bottom: 15%;
+      right: 15%;
+      width: 120px;
+      height: 120px;
+      border: 1px solid rgba(229,167,27,0.12);
+      transform: rotate(45deg);
+      animation: floatUpDown 6s ease-in-out infinite;
+    }
+
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    @keyframes floatUpDown {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%       { transform: rotate(45deg) translateY(-16px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(229,167,27,0.3);
+      border-radius: 50px;
+      padding: 8px 20px;
+      margin-bottom: 32px;
+      animation: fadeInUp 0.7s ease both;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(229,167,27,0.5); }
+      50%       { box-shadow: 0 0 0 6px rgba(229,167,27,0); }
+    }
+
+    .hero-badge-text {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .hero-company-name {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+      animation: fadeInUp 0.8s 0.1s ease both;
+    }
+
+    .hero-company-ar {
+      font-family: var(--font-ar);
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      direction: rtl;
+      display: block;
+      margin-bottom: 32px;
+      animation: fadeInUp 0.8s 0.2s ease both;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.25;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s 0.3s ease both;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      max-width: 560px;
+      margin-bottom: 44px;
+      animation: fadeInUp 0.8s 0.4s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      animation: fadeInUp 0.8s 0.5s ease both;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 24px 0;
+      animation: fadeInUp 0.8s 0.25s ease both;
+    }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: fadeIn 1.5s 1s ease both;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .scroll-mouse {
+      width: 22px;
+      height: 36px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      padding-top: 6px;
+    }
+
+    .scroll-mouse::before {
+      content: '';
+      width: 3px;
+      height: 8px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 2px;
+      animation: scrollDown 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollDown {
+      0%   { transform: translateY(0); opacity: 1; }
+      80%  { transform: translateY(12px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================================
+       ABOUT US
+    ============================================================ */
+    #about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-card-main {
+      background: linear-gradient(135deg, var(--dark-blue), var(--royal-blue));
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card-main::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(229,167,27,0.08);
+    }
+
+    .about-card-main::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .about-card-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(229,167,27,0.15);
+      border: 1px solid rgba(229,167,27,0.25);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--gold);
+    }
+
+    .about-card-tagline {
+      font-size: 1.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 12px;
+    }
+
+    .about-card-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-pill-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap;
+    }
+
+    .about-pill {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.85);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .about-card-float {
+      position: relative;
+      margin-top: -24px;
+      margin-left: auto;
+      margin-right: 36px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 220px;
+      max-width: 280px;
+      z-index: 2;
+    }
+
+    .float-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--light-grey);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .float-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--royal-blue);
+    }
+
+    .float-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dark-blue);
+    }
+
+    .float-text span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .about-content .section-lead {
+      max-width: 100%;
+      margin-bottom: 28px;
+    }
+
+    .principle-box {
+      background: var(--light-grey);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+
+    .principle-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .principle-text {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark-blue);
+      letter-spacing: -0.01em;
+    }
+
+    .principle-text span {
+      color: var(--royal-blue);
+    }
+
+    /* ============================================================
+       BUSINESS AREAS
+    ============================================================ */
+    #business {
+      background: var(--light-grey);
+    }
+
+    .business-header {
+      margin-bottom: 60px;
+    }
+
+    .business-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .business-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .business-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .business-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .business-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .business-card:hover .card-icon {
+      background: var(--royal-blue);
+      border-color: var(--royal-blue);
+    }
+
+    .business-card:hover .card-icon svg {
+      stroke: var(--white);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      background: var(--light-grey);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+
+    .card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--royal-blue);
+      transition: var(--transition);
+    }
+
+    .card-number {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark-blue);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       OUR APPROACH
+    ============================================================ */
+    #approach {
+      background: var(--white);
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .approach-item {
+      position: relative;
+      padding: 40px 28px 36px;
+      border-radius: var(--radius-md);
+      background: var(--light-grey);
+      transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .approach-item::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--royal-blue), var(--gold));
+      border-radius: 3px 3px 0 0;
+    }
+
+    .approach-item:hover {
+      background: linear-gradient(135deg, var(--dark-blue) 0%, var(--royal-blue) 100%);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .approach-item:hover .approach-icon {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .approach-item:hover .approach-icon svg {
+      stroke: var(--gold);
+    }
+
+    .approach-item:hover .approach-title {
+      color: var(--white);
+    }
+
+    .approach-item:hover .approach-desc {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .approach-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: var(--transition);
+    }
+
+    .approach-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--royal-blue);
+      transition: var(--transition);
+    }
+
+    .approach-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark-blue);
+      margin-bottom: 12px;
+      transition: var(--transition);
+    }
+
+    .approach-desc {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      transition: var(--transition);
+    }
+
+    /* ============================================================
+       VISION
+    ============================================================ */
+    #vision {
+      background: linear-gradient(135deg, var(--dark-blue) 0%, var(--royal-blue) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vision-geo {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .vision-geo::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 1px solid rgba(229,167,27,0.1);
+    }
+
+    .vision-geo::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .vision-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .vision-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .vision-eyebrow-line {
+      width: 36px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 1px;
+    }
+
+    .vision-eyebrow span {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .vision-headline {
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+
+    .vision-body {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.85;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .vision-pillars {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 52px;
+      flex-wrap: wrap;
+    }
+
+    .vision-pillar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .vision-pillar-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(229,167,27,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vision-pillar-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--gold);
+    }
+
+    .vision-pillar-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+    }
+
+    /* ============================================================
+       PARTNERSHIPS
+    ============================================================ */
+    #partnerships {
+      background: var(--light-grey);
+    }
+
+    .partnerships-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .partnerships-content .section-lead {
+      max-width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .partnerships-points {
+      margin: 28px 0 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .p-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .p-point-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .p-point-text {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .partnerships-visual {
+      position: relative;
+    }
+
+    .p-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .p-card-icon-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--light-grey), var(--white));
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+
+    .p-card-icon-wrap svg {
+      width: 38px;
+      height: 38px;
+      stroke: var(--royal-blue);
+    }
+
+    .p-card-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--dark-blue);
+      margin-bottom: 14px;
+    }
+
+    .p-card-body {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .p-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .p-tag {
+      background: var(--light-grey);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact {
+      background: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contact-info-block {
+      background: linear-gradient(135deg, var(--dark-blue), var(--royal-blue));
+      border-radius: var(--radius-lg);
+      padding: 52px 44px;
+      color: var(--white);
+      position: sticky;
+      top: 100px;
+    }
+
+    .contact-info-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .contact-info-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 40px;
+    }
+
+    .contact-detail-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-detail-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold);
+    }
+
+    .contact-detail-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 3px;
+    }
+
+    .contact-detail-value {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+    }
+
+    .contact-detail-value a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-detail-value a:hover {
+      color: var(--gold);
+    }
+
+    .contact-cr-row {
+      display: flex;
+      gap: 16px;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+    }
+
+    .contact-cr-badge {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+    }
+
+    .contact-cr-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 3px;
+    }
+
+    .contact-cr-value {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Contact Form */
+    .contact-form-wrap {
+      padding: 8px 0;
+    }
+
+    .form-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--dark-blue);
+      margin-bottom: 8px;
+    }
+
+    .form-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+
+    .form-label span {
+      color: var(--gold);
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-family: var(--font-en);
+      color: var(--text);
+      background: var(--white);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #9CA3AF;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--royal-blue);
+      box-shadow: 0 0 0 3px rgba(11,69,150,0.08);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 15px 32px;
+      background: var(--gold);
+      color: var(--dark-blue);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-en);
+    }
+
+    .form-submit:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(229,167,27,0.35);
+    }
+
+    .form-submit svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--dark-blue);
+    }
+
+    /* Success/Error state */
+    .form-message {
+      display: none;
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 16px;
+    }
+
+    .form-message.success {
+      background: #D1FAE5;
+      color: #065F46;
+      border: 1px solid #A7F3D0;
+    }
+
+    .form-message.error {
+      background: #FEE2E2;
+      color: #991B1B;
+      border: 1px solid #FECACA;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--dark-blue);
+      padding: 64px 0 0;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 56px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand-en {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand-ar {
+      font-family: var(--font-ar);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      direction: rtl;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand-accent {
+      width: 32px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 1px;
+      margin-bottom: 20px;
+    }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-principle {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-col-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+      padding-left: 4px;
+    }
+
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .footer-contact-item svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--gold);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .footer-contact-item span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+
+    .footer-contact-item a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-contact-item a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-cr {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-copyright {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      text-align: right;
+    }
+
+    /* ============================================================
+       ANIMATIONS / SCROLL REVEAL
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================================
+       RESPONSIVE — COMPREHENSIVE
+    ============================================================ */
+
+    /* ── Large desktop: 1280px+ ─────────────────────────────── */
+    @media (min-width: 1280px) {
+      .container { padding: 0 40px; }
+      .about-grid { gap: 100px; }
+      .contact-grid { gap: 88px; }
+      .partnerships-inner { gap: 100px; }
+    }
+
+    /* ── Tablet landscape / small desktop: ≤1100px ────────── */
+    @media (max-width: 1100px) {
+      .business-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      .about-grid { gap: 60px; }
+      .partnerships-inner { gap: 60px; }
+    }
+
+    /* ── Tablet portrait: ≤900px ───────────────────────────── */
+    @media (max-width: 900px) {
+      .section-padding        { padding: 80px 0; }
+
+      /* About */
+      .about-grid             { grid-template-columns: 1fr; gap: 56px; }
+      .about-visual           { order: -1; }
+      .about-card-main        { padding: 44px 36px; }
+      .about-card-float       {
+        margin-top: 16px;
+        margin-right: auto;
+        width: auto;
+        max-width: 320px;
+      }
+
+      /* Business */
+      .business-grid          { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+      /* Approach */
+      .approach-grid          { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+      /* Partnerships */
+      .partnerships-inner     { grid-template-columns: 1fr; gap: 48px; }
+      .partnerships-visual    { max-width: 520px; margin: 0 auto; width: 100%; }
+
+      /* Contact */
+      .contact-grid           { grid-template-columns: 1fr; gap: 40px; }
+      .contact-info-block     { position: static; padding: 44px 36px; }
+
+      /* Footer */
+      .footer-main            { grid-template-columns: 1fr 1fr; gap: 32px; padding-bottom: 40px; }
+    }
+
+    /* ── Mobile landscape / large phone: ≤768px ───────────── */
+    @media (max-width: 768px) {
+      /* Prevent ALL horizontal overflow */
+      html, body                { overflow-x: hidden; max-width: 100vw; }
+      .container, section, footer, nav { max-width: 100vw; overflow-x: hidden; }
+
+      /* Navbar */
+      #navbar                   { padding: 16px 0; }
+      #navbar.scrolled          { padding: 12px 0; }
+      .nav-links                { display: none; }
+      .nav-toggle               { display: flex; }
+      .nav-mobile               { display: flex; }
+      .nav-logo-en              { font-size: 0.92rem; }
+      .nav-logo-ar              { font-size: 0.68rem; }
+
+      /* Hero */
+      #hero                     { min-height: 100svh; padding-top: 90px; padding-bottom: 80px; align-items: flex-start; }
+      .hero-content             { max-width: 100%; }
+      .hero-badge               { padding: 6px 14px; margin-bottom: 24px; }
+      .hero-badge-text          { font-size: 0.72rem; }
+      .hero-company-name        { font-size: clamp(1.6rem, 7vw, 2.4rem); margin-bottom: 6px; }
+      .hero-company-ar          { font-size: clamp(0.88rem, 3.5vw, 1.1rem); margin-bottom: 22px; }
+      .hero-divider             { margin: 18px 0; width: 48px; }
+      .hero-tagline             { font-size: clamp(1.1rem, 5vw, 1.5rem); margin-bottom: 14px; }
+      .hero-sub                 { font-size: 0.95rem; margin-bottom: 32px; max-width: 100%; }
+      .hero-actions             { flex-direction: column; gap: 12px; }
+      .hero-actions .btn        { width: 100%; justify-content: center; }
+      .hero-shape-1,
+      .hero-shape-2,
+      .hero-shape-3             { display: none; }
+      .hero-scroll              { bottom: 24px; }
+
+      /* Sections */
+      .section-padding          { padding: 64px 0; }
+      .section-title            { font-size: clamp(1.5rem, 5.5vw, 2rem); }
+      .section-lead             { font-size: 0.95rem; }
+
+      /* About */
+      .about-grid               { gap: 40px; }
+      .about-card-main          { padding: 36px 28px; }
+      .about-card-tagline       { font-size: 1.3rem; }
+      .about-card-float         {
+        margin-top: 16px;
+        margin-right: 0;
+        max-width: 100%;
+        width: 100%;
+      }
+      .about-pill-row           { gap: 8px; }
+      .principle-box            { padding: 20px 22px; }
+      .principle-text           { font-size: 1.15rem; }
+
+      /* Business */
+      .business-grid            { grid-template-columns: 1fr; gap: 16px; }
+      .business-header          { margin-bottom: 40px; }
+      .business-card            { padding: 28px 22px; }
+
+      /* Approach */
+      .approach-grid            { grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
+      .approach-item            { padding: 32px 24px 28px; }
+
+      /* Vision */
+      .vision-pillars           { gap: 16px; }
+      .vision-pillar-icon       { width: 48px; height: 48px; }
+      .vision-pillar-label      { font-size: 0.78rem; }
+      .vision-headline          { font-size: clamp(1.4rem, 5.5vw, 2rem); }
+      .vision-body              { font-size: 0.95rem; }
+
+      /* Partnerships */
+      .partnerships-inner       { gap: 40px; }
+      .partnerships-visual      { max-width: 100%; }
+      .p-card                   { padding: 32px 24px; }
+      .partnerships-points      { margin: 20px 0 28px; gap: 14px; }
+
+      /* Contact */
+      .contact-grid             { gap: 32px; }
+      .contact-info-block       { padding: 36px 28px; border-radius: var(--radius-md); }
+      .contact-info-title       { font-size: 1.25rem; }
+      .contact-cr-row           { flex-wrap: wrap; }
+      .form-row                 { grid-template-columns: 1fr; gap: 0; }
+      .form-group.full          { grid-column: 1; }
+      .form-title               { font-size: 1.25rem; }
+
+      /* Footer */
+      .footer-main              { grid-template-columns: 1fr; gap: 32px; padding-bottom: 36px; }
+      .footer-bottom            { flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+      .footer-copyright         { text-align: center; }
+      footer                    { padding: 48px 0 0; }
+    }
+
+    /* ── Small mobile: ≤480px ──────────────────────────────── */
+    @media (max-width: 480px) {
+      .container                { padding: 0 16px; }
+      .section-padding          { padding: 52px 0; }
+
+      /* Navbar */
+      #navbar                   { padding: 14px 0; }
+      .nav-logo-en              { font-size: 0.85rem; max-width: 200px; }
+
+      /* Hero */
+      #hero                     { padding-top: 80px; padding-bottom: 72px; }
+      .hero-badge               { padding: 5px 12px; }
+      .hero-badge-text          { font-size: 0.68rem; letter-spacing: 0.06em; }
+      .hero-company-name        { font-size: clamp(1.4rem, 8vw, 1.9rem); letter-spacing: -0.01em; }
+      .hero-company-ar          { font-size: 0.85rem; }
+      .hero-tagline             { font-size: clamp(1rem, 5.5vw, 1.3rem); }
+      .hero-sub                 { font-size: 0.9rem; line-height: 1.7; }
+      .hero-actions .btn        { padding: 13px 24px; font-size: 0.9rem; }
+
+      /* About */
+      .about-card-main          { padding: 28px 22px; }
+      .about-card-tagline       { font-size: 1.15rem; }
+      .about-card-icon          { width: 48px; height: 48px; margin-bottom: 20px; }
+      .about-pill               { font-size: 0.75rem; padding: 5px 12px; }
+      .about-pill-row           { gap: 6px; }
+      .float-icon               { width: 38px; height: 38px; }
+
+      /* Business */
+      .business-card            { padding: 24px 18px; }
+      .card-icon                { width: 44px; height: 44px; }
+      .card-title               { font-size: 0.95rem; }
+
+      /* Approach */
+      .approach-item            { padding: 28px 20px 24px; }
+      .approach-icon            { width: 48px; height: 48px; }
+
+      /* Vision */
+      .vision-pillars           { gap: 12px; }
+      .vision-pillar-icon       { width: 44px; height: 44px; }
+      .vision-pillar-icon svg   { width: 20px; height: 20px; }
+      .vision-pillar-label      { font-size: 0.72rem; }
+      .vision-eyebrow-line      { width: 24px; }
+
+      /* Partnerships */
+      .p-card                   { padding: 28px 20px; }
+      .p-card-title             { font-size: 1.1rem; }
+      .p-tags                   { gap: 6px; }
+      .p-tag                    { font-size: 0.75rem; padding: 5px 12px; }
+
+      /* Contact */
+      .contact-info-block       { padding: 28px 20px; }
+      .contact-info-title       { font-size: 1.1rem; }
+      .contact-cr-row           { flex-direction: column; gap: 10px; }
+      .contact-cr-badge         { width: 100%; }
+      .form-input,
+      .form-textarea            { padding: 12px 14px; font-size: 0.9rem; }
+      .form-submit              { padding: 14px 24px; }
+
+      /* Footer */
+      .footer-brand-en          { font-size: 0.95rem; }
+      .footer-bottom            { padding: 20px 0; }
+      footer                    { padding: 40px 0 0; }
+    }
+
+    /* ── Extra small: ≤360px ───────────────────────────────── */
+    @media (max-width: 360px) {
+      .container                { padding: 0 14px; }
+      .hero-company-name        { font-size: 1.35rem; }
+      .hero-tagline             { font-size: 1rem; }
+      .section-title            { font-size: 1.4rem; }
+      .btn                      { padding: 12px 20px; font-size: 0.88rem; }
+      .about-card-main          { padding: 24px 18px; }
+      .business-card            { padding: 22px 16px; }
+      .contact-info-block       { padding: 24px 16px; }
+      .p-card                   { padding: 24px 16px; }
+      .approach-item            { padding: 24px 16px 20px; }
+    }
+
+    /* ── Print / accessibility ─────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav id="navbar" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="South Ruwi Business Districts LLC — Home">
+      <span class="nav-logo-en">South Ruwi Business Districts</span>
+      <span class="nav-logo-ar arabic">ضواحي جنوب روي للأعمال ش.م.م</span>
+      <span class="nav-logo-accent" aria-hidden="true"></span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#business">Business Areas</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#partnerships">Partnerships</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav Overlay -->
+<nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+  <button class="close-btn" id="navClose" aria-label="Close navigation menu">&#x2715;</button>
+  <a href="#about"         class="nav-m-link">About</a>
+  <a href="#business"      class="nav-m-link">Business Areas</a>
+  <a href="#approach"      class="nav-m-link">Our Approach</a>
+  <a href="#vision"        class="nav-m-link">Vision</a>
+  <a href="#partnerships"  class="nav-m-link">Partnerships</a>
+  <a href="#contact"       class="nav-m-link" style="color:var(--gold);font-weight:700;">Contact Us</a>
+</nav>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-geo" aria-hidden="true">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-shape-1"></div>
+    <div class="hero-shape-2"></div>
+    <div class="hero-shape-3"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge" aria-label="Location: Ruwi · Muscat · Oman">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        <span class="hero-badge-text">Ruwi &nbsp;·&nbsp; Muscat &nbsp;·&nbsp; Oman</span>
+      </div>
+
+      <h1 class="hero-company-name">South Ruwi Business Districts LLC</h1>
+      <span class="hero-company-ar arabic">ضواحي جنوب روي للأعمال ش.م.م</span>
+
+      <div class="hero-divider" aria-hidden="true"></div>
+
+      <p class="hero-tagline">Built on opportunity. Driven by growth.</p>
+      <p class="hero-sub">
+        A diversified Omani company operating across trade, services, and commercial development, creating lasting value through trusted partnerships.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Contact Us
+        </a>
+        <a href="#business" class="btn btn-outline-white">
+          Our Business
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="hero-scroll" aria-label="Scroll to About section">
+    <div class="scroll-mouse" aria-hidden="true"></div>
+    <span>Scroll</span>
+  </a>
+</section>
+
+
+<!-- ============================================================
+     ABOUT US
+============================================================ -->
+<section id="about" class="section-padding">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Visual Column -->
+      <div class="about-visual reveal">
+        <div class="about-card-main" aria-hidden="true">
+          <div class="about-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="about-card-tagline">
+            Sultanate of Oman<br/>Commercial Excellence
+          </div>
+          <div class="about-card-sub">Registered company · C.R No. 1650861</div>
+
+          <div class="about-pill-row">
+            <span class="about-pill">Trade</span>
+            <span class="about-pill">Services</span>
+            <span class="about-pill">Development</span>
+          </div>
+        </div>
+
+        <div class="about-card-float">
+          <div class="float-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="float-text">
+            <strong>Muscat Governorate</strong>
+            <span>Ruwi / Muttrah, Oman</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Column -->
+      <div class="about-content">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">About Us</h2>
+        <div class="title-accent" aria-hidden="true"></div>
+
+        <p class="section-lead">
+          South Ruwi Business Districts LLC identifies, develops, and grows commercial opportunities across multiple sectors in the Sultanate of Oman.
+        </p>
+        <p class="section-lead" style="margin-top:16px;">
+          We study market needs, connect the right partners, and build relationships designed to last.
+        </p>
+
+        <div class="principle-box" aria-label="Company principle">
+          <div class="principle-label">Our Principle</div>
+          <div class="principle-text">
+            <span>Build.</span> Connect. Grow.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BUSINESS AREAS
+============================================================ -->
+<section id="business" class="section-padding">
+  <div class="container">
+    <div class="business-header text-center reveal">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Our Business Areas</h2>
+      <div class="title-accent centered" aria-hidden="true"></div>
+      <p class="section-lead" style="margin:0 auto;">
+        Diversified across sectors that drive real commercial value in the Sultanate of Oman.
+      </p>
+    </div>
+
+    <div class="business-grid" role="list">
+
+      <!-- Card 1 -->
+      <article class="business-card reveal reveal-delay-1" role="listitem">
+        <div class="card-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <div class="card-number">01</div>
+        <h3 class="card-title">Trade &amp; Commerce</h3>
+        <p class="card-desc">Sourcing and developing products and markets that deliver practical value to businesses and consumers.</p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="business-card reveal reveal-delay-2" role="listitem">
+        <div class="card-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="card-number">02</div>
+        <h3 class="card-title">Retail &amp; Distribution</h3>
+        <p class="card-desc">Bringing quality products to customers through modern retail and distribution channels.</p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="business-card reveal reveal-delay-3" role="listitem">
+        <div class="card-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="card-number">03</div>
+        <h3 class="card-title">Consumer &amp; Lifestyle</h3>
+        <p class="card-desc">Products and services that meet evolving everyday needs.</p>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="business-card reveal reveal-delay-4" role="listitem">
+        <div class="card-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="card-number">04</div>
+        <h3 class="card-title">Hospitality</h3>
+        <p class="card-desc">Opportunities in food, beverage, and customer-focused services.</p>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="business-card reveal reveal-delay-1" role="listitem">
+        <div class="card-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="card-number">05</div>
+        <h3 class="card-title">Business Services</h3>
+        <p class="card-desc">Reliable support for commercial operations, backed by strong relationships.</p>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="business-card reveal reveal-delay-2" role="listitem">
+        <div class="card-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+        </div>
+        <div class="card-number">06</div>
+        <h3 class="card-title">Equipment &amp; Solutions</h3>
+        <p class="card-desc">Machinery, equipment, and practical solutions for commercial and industrial users.</p>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="business-card reveal reveal-delay-3" role="listitem">
+        <div class="card-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+        </div>
+        <div class="card-number">07</div>
+        <h3 class="card-title">Construction &amp; Development</h3>
+        <p class="card-desc">Contracting and commercial development opportunities.</p>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="business-card reveal reveal-delay-4" role="listitem">
+        <div class="card-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="card-number">08</div>
+        <h3 class="card-title">New Ventures</h3>
+        <p class="card-desc">Openness to new markets, partnerships, and ideas with long-term potential.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     OUR APPROACH
+============================================================ -->
+<section id="approach" class="section-padding">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">How We Operate</span>
+      <h2 class="section-title">Our Approach</h2>
+      <div class="title-accent centered" aria-hidden="true"></div>
+      <p class="section-lead" style="margin:0 auto;">
+        Four principles that guide everything we do.
+      </p>
+    </div>
+
+    <div class="approach-grid">
+
+      <div class="approach-item reveal reveal-delay-1">
+        <div class="approach-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3 class="approach-title">Market Insight</h3>
+        <p class="approach-desc">We focus on real demand and opportunities with genuine commercial value.</p>
+      </div>
+
+      <div class="approach-item reveal reveal-delay-2">
+        <div class="approach-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="approach-title">Trusted Relationships</h3>
+        <p class="approach-desc">We build dependable partnerships with customers, suppliers, and partners.</p>
+      </div>
+
+      <div class="approach-item reveal reveal-delay-3">
+        <div class="approach-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        </div>
+        <h3 class="approach-title">Adaptability</h3>
+        <p class="approach-desc">Our diversified model lets us respond quickly to market change.</p>
+      </div>
+
+      <div class="approach-item reveal reveal-delay-4">
+        <div class="approach-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="approach-title">Long-Term Thinking</h3>
+        <p class="approach-desc">We pursue sustainable value, not short-term gains.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     VISION
+============================================================ -->
+<section id="vision" class="section-padding text-center">
+  <div class="vision-geo" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="vision-inner reveal">
+      <div class="vision-eyebrow" style="justify-content:center;">
+        <span class="vision-eyebrow-line" aria-hidden="true"></span>
+        <span>Our Vision</span>
+        <span class="vision-eyebrow-line" aria-hidden="true"></span>
+      </div>
+
+      <h2 class="vision-headline">Connecting people, markets, and opportunities.</h2>
+
+      <p class="vision-body">
+        To connect people, markets, and opportunities, building a business that grows with the market while staying grounded in trust, value, and long-term relationships.
+      </p>
+
+      <div class="vision-pillars" role="list" aria-label="Vision pillars">
+        <div class="vision-pillar" role="listitem">
+          <div class="vision-pillar-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="vision-pillar-label">People</span>
+        </div>
+
+        <div class="vision-pillar" role="listitem">
+          <div class="vision-pillar-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <span class="vision-pillar-label">Markets</span>
+        </div>
+
+        <div class="vision-pillar" role="listitem">
+          <div class="vision-pillar-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <span class="vision-pillar-label">Opportunity</span>
+        </div>
+
+        <div class="vision-pillar" role="listitem">
+          <div class="vision-pillar-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="vision-pillar-label">Trust</span>
+        </div>
+
+        <div class="vision-pillar" role="listitem">
+          <div class="vision-pillar-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+          </div>
+          <span class="vision-pillar-label">Growth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PARTNERSHIPS
+============================================================ -->
+<section id="partnerships" class="section-padding">
+  <div class="container">
+    <div class="partnerships-inner">
+
+      <div class="partnerships-content reveal">
+        <span class="section-label">Work With Us</span>
+        <h2 class="section-title">Open to the next opportunity.</h2>
+        <div class="title-accent" aria-hidden="true"></div>
+
+        <p class="section-lead">
+          We welcome discussions with businesses, suppliers, service providers, and investors.
+        </p>
+
+        <div class="partnerships-points" role="list" aria-label="Partnership types">
+          <div class="p-point" role="listitem">
+            <span class="p-point-dot" aria-hidden="true"></span>
+            <p class="p-point-text">Businesses looking to enter or expand within the Omani market</p>
+          </div>
+          <div class="p-point" role="listitem">
+            <span class="p-point-dot" aria-hidden="true"></span>
+            <p class="p-point-text">Suppliers and service providers seeking reliable commercial partners</p>
+          </div>
+          <div class="p-point" role="listitem">
+            <span class="p-point-dot" aria-hidden="true"></span>
+            <p class="p-point-text">Investors and joint venture propositions with long-term potential</p>
+          </div>
+        </div>
+
+        <p class="section-lead" style="margin-bottom:36px;">
+          Whether you're entering a new market or proposing a joint venture, we'd be glad to explore it with you.
+        </p>
+
+        <a href="#contact" class="btn btn-gold">
+          Start a Conversation
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="partnerships-visual reveal reveal-delay-2">
+        <div class="p-card">
+          <div class="p-card-icon-wrap" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <h3 class="p-card-title">Let's Explore Together</h3>
+          <p class="p-card-body">
+            South Ruwi Business Districts LLC is open to meaningful conversations with the right partners.
+          </p>
+          <div class="p-tags" role="list" aria-label="Partnership categories">
+            <span class="p-tag" role="listitem">Trade Partners</span>
+            <span class="p-tag" role="listitem">Suppliers</span>
+            <span class="p-tag" role="listitem">Investors</span>
+            <span class="p-tag" role="listitem">Joint Ventures</span>
+            <span class="p-tag" role="listitem">Service Providers</span>
+          </div>
+          <a href="#contact" class="btn btn-outline-blue" style="width:100%;justify-content:center;">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section id="contact" class="section-padding" style="background:var(--light-grey);">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:60px;">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Have a business opportunity or enquiry?</h2>
+      <div class="title-accent centered" aria-hidden="true"></div>
+      <p class="section-lead" style="margin:0 auto;">
+        Get in touch with South Ruwi Business Districts LLC.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Info block -->
+      <div class="contact-info-block reveal" aria-label="Company contact information">
+        <h3 class="contact-info-title">South Ruwi Business Districts LLC</h3>
+        <p class="contact-info-sub arabic" style="font-size:0.9rem;margin-bottom:32px;color:rgba(255,255,255,0.55);">
+          ضواحي جنوب روي للأعمال ش.م.م
+        </p>
+
+        <div class="contact-detail-list">
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Location</div>
+              <div class="contact-detail-value">Ruwi / Muttrah, Muscat Governorate, Oman</div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.31 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Phone</div>
+              <div class="contact-detail-value">
+                <a href="tel:+96875126013">+968 75126013</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-value">
+                <a href="mailto:vipower0989@outlook.com">vipower0989@outlook.com</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contact-cr-row" aria-label="Registration details">
+          <div class="contact-cr-badge">
+            <div class="contact-cr-label">C.R No.</div>
+            <div class="contact-cr-value">1650861</div>
+          </div>
+          <div class="contact-cr-badge">
+            <div class="contact-cr-label">Tax No.</div>
+            <div class="contact-cr-value">123089563</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <h3 class="form-title">Send an Enquiry</h3>
+        <p class="form-sub">Fill in the form and we will get back to you.</p>
+
+        <form id="contactForm" novalidate aria-label="Contact enquiry form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                placeholder="Your full name"
+                required
+                autocomplete="name"
+                aria-required="true"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address <span aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="you@example.com"
+                required
+                autocomplete="email"
+                aria-required="true"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input"
+              placeholder="+968 xxxxxxxx"
+              autocomplete="tel"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message <span aria-hidden="true">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-textarea"
+              placeholder="Tell us about your business enquiry or opportunity…"
+              required
+              aria-required="true"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" aria-label="Send enquiry">
+            Send Enquiry
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+
+          <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer aria-label="Site footer">
+  <div class="container">
+    <div class="footer-main">
+
+      <!-- Brand -->
+      <div>
+        <div class="footer-brand-en">South Ruwi Business Districts LLC</div>
+        <span class="footer-brand-ar arabic">ضواحي جنوب روي للأعمال ش.م.م</span>
+        <div class="footer-brand-accent" aria-hidden="true"></div>
+        <div class="footer-tagline">Trade · Services · Opportunity · Oman</div>
+        <div class="footer-principle">Build. Connect. Grow.</div>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links" role="list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#business">Business Areas</a></li>
+          <li><a href="#approach">Our Approach</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#partnerships">Partnerships</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-list" aria-label="Footer contact information">
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Ruwi / Muttrah<br/>Muscat Governorate, Oman</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.31 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span><a href="tel:+96875126013">+968 75126013</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span><a href="mailto:vipower0989@outlook.com">vipower0989@outlook.com</a></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+      <div class="footer-cr" aria-label="Registration numbers">
+        C.R No. 1650861 &nbsp;·&nbsp; Tax No. 123089563
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 South Ruwi Business Districts LLC. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  /* -------------------------
+     Navbar: scroll state
+  ------------------------- */
+  const navbar = document.getElementById('navbar');
+
+  const updateNavbar = () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
+
+  /* -------------------------
+     Navbar: active link
+  ------------------------- */
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const setActiveLink = () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', setActiveLink, { passive: true });
+
+  /* -------------------------
+     Mobile nav toggle
+  ------------------------- */
+  const navToggle  = document.getElementById('navToggle');
+  const navMobile  = document.getElementById('navMobile');
+  const navClose   = document.getElementById('navClose');
+  const mobileLinks = document.querySelectorAll('.nav-mobile a, .nav-m-link');
+
+  const openMobileNav = () => {
+    navMobile.classList.add('open');
+    navToggle.classList.add('open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMobileNav = () => {
+    navMobile.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  navToggle.addEventListener('click', () => {
+    if (navMobile.classList.contains('open')) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
+  });
+
+  navClose.addEventListener('click', closeMobileNav);
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMobileNav);
+  });
+
+  /* -------------------------
+     Scroll reveal
+  ------------------------- */
+  const revealElements = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  /* -------------------------
+     Contact form
+  ------------------------- */
+  const contactForm = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Basic validation
+    if (!name || !email || !message) {
+      showFormMessage('error', 'Please fill in all required fields (Name, Email, Message).');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showFormMessage('error', 'Please enter a valid email address.');
+      return;
+    }
+
+    // Simulate submission (mailto fallback)
+    const subject = encodeURIComponent('Business Enquiry from ' + name);
+    const phone   = document.getElementById('phone').value.trim();
+    const body    = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      (phone ? 'Phone: ' + phone + '\n' : '') +
+      '\nMessage:\n' + message
+    );
+
+    // Open mailto
+    window.location.href = 'mailto:vipower0989@outlook.com?subject=' + subject + '&body=' + body;
+
+    // Show success message
+    showFormMessage('success', 'Thank you, ' + name + '! Your enquiry has been prepared. If your email client did not open, please contact us directly at vipower0989@outlook.com.');
+
+    // Reset form
+    contactForm.reset();
+  });
+
+  function showFormMessage(type, text) {
+    formMessage.className = 'form-message ' + type;
+    formMessage.textContent = text;
+    formMessage.style.display = 'block';
+
+    // Scroll to message
+    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    // Auto-hide success after 8 seconds
+    if (type === 'success') {
+      setTimeout(() => {
+        formMessage.style.display = 'none';
+      }, 8000);
+    }
+  }
+
+  /* -------------------------
+     Smooth scroll for all anchors
+  ------------------------- */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
