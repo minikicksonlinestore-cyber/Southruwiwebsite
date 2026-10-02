@@ -75,11 +75,12 @@ nav {
 @media (max-width: 640px) { nav { padding: 14px 18px; } }
 
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand-mark { width: 32px; height: 32px; flex-shrink: 0; }
+.brand-mark { width: 48px; height: 48px; flex-shrink: 0; object-fit: contain; border-radius: 50%; background: var(--white); }
 .brand-name {
   color: var(--stone-50);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 14px; font-weight: 600; line-height: 1.15; letter-spacing: .01em;
+  white-space: nowrap;
 }
 .brand-name span {
   display: block; font-size: 10px; color: var(--gold-400);
@@ -654,17 +655,10 @@ footer {
 <header>
   <nav>
     <div class="brand">
-      <!-- Brand mark: stylised bar-chart in brand colours -->
-      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <rect x="3"  y="16" width="5" height="13" fill="#E5A71B"/>
-        <rect x="9"  y="10" width="5" height="19" fill="#0B4596"/>
-        <rect x="15" y="5"  width="5" height="24" fill="#E5A71B"/>
-        <rect x="21" y="13" width="5" height="16" fill="#0B4596"/>
-        <path d="M1 26 Q16 34 31 22" stroke="#E5A71B" stroke-width="1.4" fill="none"/>
-      </svg>
+      <img class="brand-mark" src="logo.jpg" alt="South Ruwi Business Districts LLC Logo" />
       <div class="brand-name">
-        South Ruwi Business Districts
-        <span>LLC · Sultanate of Oman</span>
+        South Ruwi Business Districts LLC
+        <span>C.R No. 1650861</span>
       </div>
     </div>
 
@@ -796,7 +790,7 @@ footer {
       </div>
       <div class="reg-item">
         <div class="k">Location</div>
-        <div class="v" style="font-family:'Space Grotesk',sans-serif;font-size:12.5px;">Ruwi / Muttrah · Muscat · Oman</div>
+        <div class="v" style="font-family:'Space Grotesk',sans-serif;font-size:12.5px;">Sultanate of Oman</div>
       </div>
     </div>
   </div>
@@ -841,12 +835,8 @@ footer {
           <span class="rv mono">123089563</span>
         </div>
         <div class="cert-row">
-          <span class="rk">Based in</span>
-          <span class="rv">Sultanate of Oman</span>
-        </div>
-        <div class="cert-row">
           <span class="rk">Location</span>
-          <span class="rv">Ruwi / Muttrah · Muscat</span>
+          <span class="rv">Sultanate of Oman</span>
         </div>
         <div class="cert-row">
           <span class="rk">Focus</span>
@@ -1123,7 +1113,7 @@ footer {
         </div>
         <div class="info-row">
           <span class="k">Location</span>
-          <span class="v">Ruwi / Muttrah · Muscat, Oman</span>
+          <span class="v">Sultanate of Oman</span>
         </div>
         <div class="info-row">
           <span class="k">C.R No.</span>
@@ -1160,7 +1150,7 @@ footer {
           </svg>
           <div>
             <div class="k">Telephone / هاتف</div>
-            <div class="v"><a href="tel:+96875126013">+968 75126013</a></div>
+            <div class="v"><a href="tel:+96875142456">+968 75142456</a></div>
           </div>
         </div>
         <div class="cm">
@@ -1178,8 +1168,8 @@ footer {
           </svg>
           <div>
             <div class="k">Address / العنوان</div>
-            <div class="v">Ruwi / Muttrah · Muscat Governorate</div>
-            <div class="v ar" style="font-size:13px;color:rgba(244,247,251,.55);margin-top:3px;">سلطنة عمان – روي / مطرح · مسقط</div>
+            <div class="v">Sultanate of Oman</div>
+            <div class="v ar" style="font-size:13px;color:rgba(244,247,251,.55);margin-top:3px;">سلطنة عمان</div>
           </div>
         </div>
       </div>
@@ -1233,13 +1223,7 @@ footer {
     <div class="foot-grid">
 
       <div class="foot-brand">
-        <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <rect x="3"  y="16" width="5" height="13" fill="#E5A71B"/>
-          <rect x="9"  y="10" width="5" height="19" fill="#0B4596"/>
-          <rect x="15" y="5"  width="5" height="24" fill="#E5A71B"/>
-          <rect x="21" y="13" width="5" height="16" fill="#0B4596"/>
-          <path d="M1 26 Q16 34 31 22" stroke="#E5A71B" stroke-width="1.4" fill="none"/>
-        </svg>
+        <img class="brand-mark" src="logo.jpg" alt="South Ruwi Business Districts LLC Logo" />
         <div class="brand-name">
           South Ruwi Business Districts LLC
           <span>C.R. 1650861 · Sultanate of Oman</span>
