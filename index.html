@@ -57,16 +57,13 @@ img, svg { display: block; max-width: 100%; }
 }
 @media (max-width: 640px) { .wrap { padding: 0 18px; } }
 
-/* ============================================================
-   HEADER / NAV
-============================================================ */
 header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: rgba(4, 29, 74, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(229, 167, 27, 0.2);
-  transition: background .3s;
+  transition: background .3s, box-shadow .3s;
 }
 nav {
   display: flex; align-items: center; justify-content: space-between;
@@ -75,7 +72,7 @@ nav {
 @media (max-width: 640px) { nav { padding: 14px 18px; } }
 
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand-mark { width: 48px; height: 48px; flex-shrink: 0; object-fit: contain; border-radius: 50%; background: var(--white); }
+.brand-mark { width: 52px; height: 52px; flex-shrink: 0; object-fit: cover; object-position: center; border-radius: 50%; }
 .brand-name {
   color: var(--stone-50);
   font-family: 'Space Grotesk', sans-serif;
@@ -564,7 +561,8 @@ footer {
   flex-wrap: wrap; gap: 24px; align-items: center;
 }
 .foot-brand { display: flex; align-items: center; gap: 12px; }
-.foot-brand .brand-name { font-size: 13.5px; }
+.foot-brand .brand-name { font-size: 13.5px; color: var(--stone-50); }
+.foot-brand .brand-name span { color: var(--gold-400); }
 .foot-legal {
   color: rgba(244,247,251,0.38); font-size: 12px;
   text-align: right; line-height: 1.65;
@@ -655,7 +653,7 @@ footer {
 <header>
   <nav>
     <div class="brand">
-      <img class="brand-mark" src="logo.jpg" alt="South Ruwi Business Districts LLC Logo" />
+      <img class="brand-mark" src="logo-dark.png" alt="South Ruwi Business Districts LLC Logo" />
       <div class="brand-name">
         South Ruwi Business Districts LLC
         <span>C.R No. 1650861</span>
@@ -1223,7 +1221,7 @@ footer {
     <div class="foot-grid">
 
       <div class="foot-brand">
-        <img class="brand-mark" src="logo.jpg" alt="South Ruwi Business Districts LLC Logo" />
+        <img class="brand-mark" src="logo-dark.png" alt="South Ruwi Business Districts LLC Logo" />
         <div class="brand-name">
           South Ruwi Business Districts LLC
           <span>C.R. 1650861 · Sultanate of Oman</span>
@@ -1263,8 +1261,10 @@ const header = document.querySelector('header');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     header.style.background = 'rgba(4,29,74,0.97)';
+    header.style.boxShadow = 'none';
   } else {
     header.style.background = 'rgba(4,29,74,0.88)';
+    header.style.boxShadow = 'none';
   }
 }, { passive: true });
 
