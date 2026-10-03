@@ -157,7 +157,21 @@ nav {
   padding-top: 88px;
 }
 
-/* Grain texture */
+
+  /* Decorative small outline boxes */
+  .hero-boxes {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .hero-boxes span {
+    position: absolute;
+    border: 1px solid rgba(229, 167, 27, 0.25);
+    border-radius: 2px;
+  }
+  /* Grain texture */
 .grain {
   position: absolute; inset: 0; z-index: 0; opacity: .045;
   background-image: radial-gradient(circle at 1px 1px, #fff 1px, transparent 0);
@@ -691,6 +705,18 @@ footer {
      HERO
 ============================================================ -->
 <section class="hero" id="hero" aria-label="Hero">
+  <div class="hero-boxes" aria-hidden="true">
+    <span style="width:48px;height:48px;top:12%;left:5%;"></span>
+    <span style="width:32px;height:32px;top:18%;left:7%;transform:rotate(45deg);"></span>
+    <span style="width:52px;height:52px;top:55%;left:2%;"></span>
+    <span style="width:30px;height:30px;top:60%;left:4%;transform:rotate(45deg);"></span>
+    <span style="width:44px;height:44px;top:8%;right:8%;"></span>
+    <span style="width:28px;height:28px;top:14%;right:10%;transform:rotate(45deg);"></span>
+    <span style="width:50px;height:50px;top:52%;right:5%;"></span>
+    <span style="width:32px;height:32px;top:58%;right:7%;transform:rotate(45deg);"></span>
+    <span style="width:14px;height:14px;border-radius:50%;top:26%;left:14%;border-color:rgba(229,167,27,0.2);"></span>
+    <span style="width:14px;height:14px;border-radius:50%;top:70%;right:18%;border-color:rgba(229,167,27,0.2);"></span>
+  </div>
   <div class="hero-content">
     <div class="eyebrow">Trade · Services · Opportunity · Oman</div>
 
