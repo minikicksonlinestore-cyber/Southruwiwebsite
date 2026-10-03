@@ -72,7 +72,7 @@ nav {
 @media (max-width: 640px) { nav { padding: 14px 18px; } }
 
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand-mark { width: 52px; height: 52px; flex-shrink: 0; object-fit: contain; mix-blend-mode: multiply; }
+.brand-mark { height: 56px; width: auto; flex-shrink: 0; object-fit: contain; }
 .brand-name {
   color: var(--stone-50);
   font-family: 'Space Grotesk', sans-serif;
@@ -142,7 +142,7 @@ nav {
   .nav-mobile { display: flex; }
   .brand-name { font-size: 11px; white-space: normal; line-height: 1.3; }
   .brand-name span { font-size: 8.5px; margin-top: 4px; }
-  .brand-mark { width: 44px; height: 44px; }
+  .brand-mark { height: 56px; width: auto; flex-shrink: 0; object-fit: contain; }
 }
 
 /* ============================================================
@@ -150,7 +150,7 @@ nav {
 ============================================================ */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 55%, var(--navy-800) 100%);
+  background: url('pattern-bg.png') center/cover no-repeat, #0a1f24;
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
   overflow: hidden;
@@ -215,13 +215,7 @@ nav {
 .btn-ghost:hover { border-color: var(--gold-400); color: var(--gold-400); }
 
 /* Hero mountain skyline */
-.skyline-wrap {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  z-index: 1;
-  height: 46%; min-height: 220px;
-  pointer-events: none;
-}
+.skyline-wrap { position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; height: 55%; min-height: 250px; pointer-events: none; }
 .skyline-svg { width: 100%; height: 100%; display: block; }
 
 
@@ -661,7 +655,7 @@ footer {
 <header>
   <nav>
     <div class="brand">
-      <img class="brand-mark" src="logo-new.png" alt="South Ruwi Business Districts LLC Logo" />
+      <img class="brand-mark" src="logo-outlined.png" alt="South Ruwi Business Districts LLC Logo" />
       <div class="brand-name">
         South Ruwi Business Districts LLC
         <span>C.R No. 1650861</span>
@@ -697,8 +691,6 @@ footer {
      HERO
 ============================================================ -->
 <section class="hero" id="hero" aria-label="Hero">
-  <div class="grain" aria-hidden="true"></div>
-
   <div class="hero-content">
     <div class="eyebrow">Trade · Services · Opportunity · Oman</div>
 
@@ -717,34 +709,7 @@ footer {
   </div>
 
   <!-- Mountain Skyline SVG -->
-  <div class="skyline-wrap" aria-hidden="true">
-    <svg class="skyline-svg" viewBox="0 0 1400 400" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="goldSwoosh" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#E5A71B" stop-opacity="0"/>
-          <stop offset="30%" stop-color="#E5A71B" stop-opacity="0.8"/>
-          <stop offset="70%" stop-color="#E5A71B" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#E5A71B" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="peakFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
-          <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0"/>
-        </linearGradient>
-      </defs>
-      <!-- Main mountain fill -->
-      <path d="M0,400 L200,400 380,240 460,310 530,210 600,270 660,140 720,200 760,90 820,180 870,120 940,230 1010,180 1060,260 1140,200 1200,320 1400,400" fill="url(#peakFill)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-      <!-- Mountain outline -->
-      <path d="M280,360 L420,230 490,290 560,195 630,260 680,130 740,195 760,85 830,175 880,110 950,225 1020,175 1080,255 1160,195 1250,310" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-      <!-- Distant range -->
-      <path d="M100,400 L300,310 400,340 500,280 580,320 660,250 730,290 780,200 840,260 900,220 970,280 1050,250 1120,300 1220,270 1350,350 1400,400" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-      <!-- Gold swoosh -->
-      <path d="M200,340 C450,290 650,270 780,250 S1000,260 1200,320" fill="none" stroke="url(#goldSwoosh)" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-      <!-- Horizon -->
-      <path d="M0,380 C350,340 700,330 1050,345 S1300,365 1400,380" fill="none" stroke="rgba(229,167,27,0.15)" stroke-width="1" vector-effect="non-scaling-stroke"/>
-    </svg>
-  </div>
-
-  <!-- Registration strip -->
+      <!-- Registration strip -->
   <div class="reg-strip">
     <div class="wrap">
       <div class="reg-item">
@@ -1194,7 +1159,7 @@ footer {
     <div class="foot-grid">
 
       <div class="foot-brand">
-        <img class="brand-mark" src="logo-new.png" alt="South Ruwi Business Districts LLC Logo" />
+        <img class="brand-mark" src="logo-outlined.png" alt="South Ruwi Business Districts LLC Logo" />
         <div class="brand-name">
           South Ruwi Business Districts LLC
           <span>C.R. 1650861 � Sultanate of Oman</span>
